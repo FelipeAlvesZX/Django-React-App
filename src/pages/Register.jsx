@@ -10,8 +10,7 @@ const Register = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { register, handleSubmit, formState: { errors }, watch } = useForm();
   const navigate = useNavigate();
-  
-  // Redirect if already authenticated
+
   if (isAuthenticated) {
     navigate('/dashboard');
     return null;
@@ -32,13 +31,13 @@ const Register = () => {
 
       if (result.success) {
         navigate('/login', { 
-          state: { message: 'Registration successful! Please log in with your new account.' } 
+          state: { message: 'Cadastro realizado com sucesso! Faça login com sua nova conta..' } 
         });
       } else {
         setApiError(result.message);
       }
     } catch (error) {
-      setApiError('An unexpected error occurred. Please try again.');
+      setApiError('Ocorreu um erro inesperado. Tente novamente.');
     } finally {
       setIsSubmitting(false);
     }
@@ -54,8 +53,8 @@ const Register = () => {
           className="card p-8"
         >
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-secondary-900">Create an Account</h1>
-            <p className="mt-2 text-secondary-600">Join us to get started</p>
+            <h1 className="text-2xl font-bold text-secondary-900">Crie uma conta</h1>
+            <p className="mt-2 text-secondary-600">Junte-se a nós para começar</p>
           </div>
 
           {apiError && (
@@ -71,17 +70,17 @@ const Register = () => {
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div>
               <label htmlFor="username" className="block text-sm font-medium text-secondary-700 mb-1">
-                Username
+                Nome so usuário
               </label>
               <input
                 id="username"
                 type="text"
                 className={`input ${errors.username ? 'border-error-500 focus:ring-error-500 focus:border-error-500' : ''}`}
                 {...register('username', { 
-                  required: 'Username is required',
+                  required: 'Nome de usuário é obrigatório',
                   minLength: {
                     value: 3,
-                    message: 'Username must be at least 3 characters'
+                    message: 'O nome de usuário deve ter pelo menos 3 caracteres'
                   }
                 })}
               />
@@ -92,17 +91,17 @@ const Register = () => {
 
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-secondary-700 mb-1">
-                Email Address
+                Email
               </label>
               <input
                 id="email"
                 type="email"
                 className={`input ${errors.email ? 'border-error-500 focus:ring-error-500 focus:border-error-500' : ''}`}
                 {...register('email', { 
-                  required: 'Email is required',
+                  required: 'Email é obrigatório',
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: 'Invalid email address'
+                    message: 'Email inválido'
                   }
                 })}
               />
@@ -113,17 +112,17 @@ const Register = () => {
 
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-secondary-700 mb-1">
-                Password
+                Senha
               </label>
               <input
                 id="password"
                 type="password"
                 className={`input ${errors.password ? 'border-error-500 focus:ring-error-500 focus:border-error-500' : ''}`}
                 {...register('password', { 
-                  required: 'Password is required',
+                  required: 'Senha obrigatória',
                   minLength: {
                     value: 8,
-                    message: 'Password must be at least 8 characters'
+                    message: 'A senha deve ter pelo menos 8 caracteres'
                   }
                 })}
               />
@@ -134,15 +133,15 @@ const Register = () => {
 
             <div>
               <label htmlFor="confirmPassword" className="block text-sm font-medium text-secondary-700 mb-1">
-                Confirm Password
+                Confirmar Senha
               </label>
               <input
                 id="confirmPassword"
                 type="password"
                 className={`input ${errors.confirmPassword ? 'border-error-500 focus:ring-error-500 focus:border-error-500' : ''}`}
                 {...register('confirmPassword', { 
-                  required: 'Please confirm your password',
-                  validate: value => value === password || 'Passwords do not match'
+                  required: 'Por favor confirme sua senha',
+                  validate: value => value === password || 'As senhas não correspondem'
                 })}
               />
               {errors.confirmPassword && (
@@ -155,12 +154,12 @@ const Register = () => {
                 id="terms"
                 type="checkbox"
                 className={`h-4 w-4 text-primary-500 focus:ring-primary-500 border-secondary-300 rounded ${errors.terms ? 'border-error-500' : ''}`}
-                {...register('terms', { required: 'You must agree to the terms and conditions' })}
+                {...register('terms', { required: 'Você deve concordar com os termos e condições' })}
               />
               <label htmlFor="terms" className={`ml-2 block text-sm ${errors.terms ? 'text-error-500' : 'text-secondary-700'}`}>
-                I agree to the{' '}
+                Eu concordo com o{' '}
                 <a href="#" className="text-primary-500 hover:text-primary-600 font-medium">
-                  Terms and Conditions
+                  Termos e Condições
                 </a>
               </label>
             </div>
@@ -179,17 +178,17 @@ const Register = () => {
                     <circle className="opacity-25\" cx="12\" cy="12\" r="10\" stroke="currentColor\" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
-                  Creating Account...
+                  Criando conta...
                 </>
-              ) : 'Create Account'}
+              ) : 'Criar conta'}
             </button>
           </form>
 
           <div className="mt-6 text-center">
             <p className="text-sm text-secondary-600">
-              Already have an account?{' '}
+              Já tem uma conta?{' '}
               <Link to="/login" className="text-primary-500 hover:text-primary-600 font-medium">
-                Sign in
+                Entrar
               </Link>
             </p>
           </div>

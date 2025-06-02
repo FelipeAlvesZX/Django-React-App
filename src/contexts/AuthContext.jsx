@@ -13,7 +13,6 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if user is already logged in
     const verifyToken = async () => {
       if (!token) {
         setLoading(false);
@@ -49,7 +48,7 @@ export const AuthProvider = ({ children }) => {
     } catch (error) {
       return {
         success: false,
-        message: error.response?.data?.message || 'Login failed. Please try again.',
+        message: error.response?.data?.message || 'Falha no login. Tente novamente.',
       };
     }
   };
@@ -61,7 +60,7 @@ export const AuthProvider = ({ children }) => {
     } catch (error) {
       return {
         success: false,
-        message: error.response?.data?.message || 'Registration failed. Please try again.',
+        message: error.response?.data?.message || 'O registro falhou. Tente novamente.',
       };
     }
   };

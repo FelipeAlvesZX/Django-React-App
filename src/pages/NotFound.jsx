@@ -12,9 +12,9 @@ const NotFound = () => {
           className="max-w-md mx-auto"
         >
           <h1 className="text-9xl font-bold text-primary-500">404</h1>
-          <h2 className="mt-4 text-3xl font-bold text-secondary-900">Page Not Found</h2>
+          <h2 className="mt-4 text-3xl font-bold text-secondary-900">Página não encontrada</h2>
           <p className="mt-4 text-secondary-600">
-            The page you're looking for doesn't exist or has been moved.
+            A página que você está procurando não existe ou foi movida.
           </p>
           <div className="mt-8">
             <Link
@@ -24,7 +24,7 @@ const NotFound = () => {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
-              Return Home
+              Voltar para Home
             </Link>
           </div>
         </motion.div>

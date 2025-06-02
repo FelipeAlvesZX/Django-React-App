@@ -13,13 +13,11 @@ const Dashboard = () => {
   const [editingItem, setEditingItem] = useState(null);
   const queryClient = useQueryClient();
 
-  // Fetch items from the API
   const { data: items = [], isLoading, error } = useQuery('items', async () => {
     const response = await api.get('/api/items/');
     return response.data;
   });
 
-  // Add new item mutation
   const addItemMutation = useMutation(
     (newItem) => api.post('/api/items/', newItem),
     {
@@ -31,7 +29,6 @@ const Dashboard = () => {
     }
   );
 
-  // Update item mutation
   const updateItemMutation = useMutation(
     (updatedItem) => api.put(`/api/items/${updatedItem.id}/`, updatedItem),
     {
@@ -43,7 +40,6 @@ const Dashboard = () => {
     }
   );
 
-  // Delete item mutation
   const deleteItemMutation = useMutation(
     (itemId) => api.delete(`/api/items/${itemId}/`),
     {
@@ -62,7 +58,7 @@ const Dashboard = () => {
   };
 
   const handleDeleteItem = (itemId) => {
-    if (window.confirm('Are you sure you want to delete this item?')) {
+    if (window.confirm('Tem certeza de que deseja excluir este item?')) {
       deleteItemMutation.mutate(itemId);
     }
   };
@@ -72,7 +68,6 @@ const Dashboard = () => {
     setIsFormOpen(true);
   };
 
-  // If not authenticated, redirect to login
   if (!isAuthenticated) {
     return <Navigate to="/login" />;
   }
@@ -84,7 +79,7 @@ const Dashboard = () => {
           <div>
             <h1 className="text-3xl font-bold text-secondary-900">Dashboard</h1>
             <p className="text-secondary-600 mt-1">
-              Welcome back, {user?.username || 'User'}
+              Bem-Vindo de Volta, {user?.username || 'User'}
             </p>
           </div>
           <button
@@ -94,7 +89,7 @@ const Dashboard = () => {
             }}
             className="btn btn-primary"
           >
-            {isFormOpen ? 'Cancel' : 'Add New Item'}
+            {isFormOpen ? 'Cancelar' : 'Adicionar Novo Item'}
           </button>
         </div>
 
@@ -108,7 +103,7 @@ const Dashboard = () => {
           >
             <div className="card p-6">
               <h2 className="text-xl font-semibold mb-4">
-                {editingItem ? 'Edit Item' : 'Add New Item'}
+                {editingItem ? 'Editar Item' : 'Adicionar Novo Item'}
               </h2>
               <ItemForm
                 initialData={editingItem}
@@ -120,7 +115,7 @@ const Dashboard = () => {
         )}
 
         <div className="card p-6">
-          <h2 className="text-xl font-semibold mb-4">Your Items</h2>
+          <h2 className="text-xl font-semibold mb-4">Seus Itens</h2>
           
           {isLoading ? (
             <div className="py-8 flex justify-center">
@@ -131,7 +126,7 @@ const Dashboard = () => {
             </div>
           ) : error ? (
             <div className="py-6 text-center">
-              <p className="text-error-500">Error loading items. Please try again.</p>
+              <p className="text-error-500">Erro ao carregar itens. Tente novamente.</p>
             </div>
           ) : items.length === 0 ? (
             <div className="py-12 text-center">
@@ -147,7 +142,7 @@ const Dashboard = () => {
                 }}
                 className="mt-4 btn btn-primary"
               >
-                Add Item
+                Adicionar Item
               </button>
             </div>
           ) : (

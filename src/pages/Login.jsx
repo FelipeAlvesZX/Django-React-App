@@ -10,7 +10,6 @@ const Login = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  // Redirect if already authenticated
   if (isAuthenticated) {
     return <Navigate to="/dashboard" replace />;
   }
@@ -25,7 +24,7 @@ const Login = () => {
         setApiError(result.message);
       }
     } catch (error) {
-      setApiError('An unexpected error occurred. Please try again.');
+      setApiError('Ocorreu um erro inesperado. Tente novamente..');
     } finally {
       setIsSubmitting(false);
     }
@@ -41,8 +40,8 @@ const Login = () => {
           className="card p-8"
         >
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-secondary-900">Welcome Back</h1>
-            <p className="mt-2 text-secondary-600">Sign in to continue to your account</p>
+            <h1 className="text-2xl font-bold text-secondary-900">Bem vindo de volta</h1>
+            <p className="mt-2 text-secondary-600">Faça login para continuar na sua conta</p>
           </div>
 
           {apiError && (
@@ -58,17 +57,17 @@ const Login = () => {
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-secondary-700 mb-1">
-                Email Address
+                Email
               </label>
               <input
                 id="email"
                 type="email"
                 className={`input ${errors.email ? 'border-error-500 focus:ring-error-500 focus:border-error-500' : ''}`}
                 {...register('email', { 
-                  required: 'Email is required',
+                  required: 'Email obrigatório',
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: 'Invalid email address'
+                    message: 'Email inválido'
                   }
                 })}
               />
@@ -80,10 +79,10 @@ const Login = () => {
             <div>
               <div className="flex items-center justify-between mb-1">
                 <label htmlFor="password" className="block text-sm font-medium text-secondary-700">
-                  Password
+                  Senha
                 </label>
                 <Link to="/forgot-password" className="text-sm text-primary-500 hover:text-primary-600">
-                  Forgot password?
+                  Esquece sua senha?
                 </Link>
               </div>
               <input
@@ -105,7 +104,7 @@ const Login = () => {
                 {...register('rememberMe')}
               />
               <label htmlFor="remember-me" className="ml-2 block text-sm text-secondary-700">
-                Remember me
+                Lembrar-se de mim
               </label>
             </div>
 
@@ -120,17 +119,17 @@ const Login = () => {
                     <circle className="opacity-25\" cx="12\" cy="12\" r="10\" stroke="currentColor\" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
-                  Signing in...
+                  Fazendo login...
                 </>
-              ) : 'Sign In'}
+              ) : 'Entrar'}
             </button>
           </form>
 
           <div className="mt-6 text-center">
             <p className="text-sm text-secondary-600">
-              Don't have an account?{' '}
+              Não tem uma conta?{' '}
               <Link to="/register" className="text-primary-500 hover:text-primary-600 font-medium">
-                Sign up
+                Registre-se
               </Link>
             </p>
           </div>

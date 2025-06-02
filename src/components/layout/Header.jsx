@@ -31,10 +31,10 @@ const Header = () => {
     >
       <div className="container-fluid flex justify-between items-center">
         <Link to="/" className="text-primary-500 font-bold text-xl">
-          AppName
+          OrganizaJá
         </Link>
 
-        {/* Desktop Navigation */}
+        {}
         <nav className="hidden md:flex items-center space-x-6">
           <Link
             to="/"
@@ -71,7 +71,7 @@ const Header = () => {
                     onClick={logout}
                     className="block w-full text-left px-4 py-2 text-sm text-secondary-700 hover:bg-gray-100"
                   >
-                    Sign Out
+                    Sair
                   </button>
                 </div>
               </div>
@@ -82,13 +82,13 @@ const Header = () => {
                 to="/login"
                 className="btn btn-secondary"
               >
-                Log In
+                Conecte-se
               </Link>
               <Link
                 to="/register"
                 className="btn btn-primary"
               >
-                Sign Up
+               Registrar-se
               </Link>
             </>
           )}
@@ -141,7 +141,7 @@ const Header = () => {
                     onClick={logout}
                     className="py-2 text-left text-secondary-700"
                   >
-                    Sign Out
+                    Sair
                   </button>
                 </>
               ) : (
@@ -150,13 +150,13 @@ const Header = () => {
                     to="/login"
                     className="py-2 text-secondary-700"
                   >
-                    Log In
+                    Conecte-se
                   </Link>
                   <Link
                     to="/register"
                     className="py-2 text-primary-500 font-medium"
                   >
-                    Sign Up
+                    Registrar-se
                   </Link>
                 </>
               )}

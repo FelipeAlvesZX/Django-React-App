@@ -32,10 +32,10 @@ class LoginView(ObtainAuthToken):
         password = request.data.get('password')
         
         if email:
-            try:
-                user = User.objects.get(email=email)
-                username = user.username
-            except User.DoesNotExist:
+            users = User.objects.filter(email=email)
+            if users.exists():
+                username = users.first().username
+            else:
                 return Response({
                     "message": "No account found with this email address"
                 }, status=status.HTTP_404_NOT_FOUND)

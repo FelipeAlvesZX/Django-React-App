@@ -24,15 +24,15 @@ const ItemList = ({ items, onEdit, onDelete }) => {
   const getCategoryLabel = (category) => {
     switch (category) {
       case 'work':
-        return 'Work';
+        return 'Trabalho';
       case 'personal':
         return 'Personal';
       case 'hobby':
         return 'Hobby';
       case 'other':
-        return 'Other';
+        return 'Outros';
       default:
-        return 'Unknown';
+        return 'Desconhecidos';
     }
   };
 
@@ -107,13 +107,13 @@ const ItemList = ({ items, onEdit, onDelete }) => {
                   className="px-4 pb-4 border-t border-gray-100"
                 >
                   <div className="pt-3">
-                    <h4 className="text-sm font-medium text-secondary-700 mb-1">Description</h4>
+                    <h4 className="text-sm font-medium text-secondary-700 mb-1">Descrição</h4>
                     <p className="text-secondary-600">
-                      {item.description || 'No description provided.'}
+                      {item.description || 'Nenhuma descrição fornecida.'}
                     </p>
                     <div className="mt-4 flex justify-end">
                       <div className="text-xs text-secondary-500">
-                        Last updated: {new Date(item.updated_at || Date.now()).toLocaleDateString()}
+                        Última Atulização: {new Date(item.updated_at || Date.now()).toLocaleDateString()}
                       </div>
                     </div>
                   </div>
