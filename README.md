@@ -1,74 +1,74 @@
-# Django React Full-Stack Application
+# Aplicação Django React Full-Stack
 
-A modern full-stack application with a Django REST API backend and React frontend.
+Um aplicativo full-stack moderno com um backend Django REST API e um frontend React.
 
-## Project Structure
+## Estrutura do Projeto
 
 - `backend/`: Django REST API application
 - `src/`: React frontend application
 
-## Features
+## Caracteristicas
 
-- Class-based Django REST API
-- Token-based authentication
-- React frontend with a modern UI
-- Form validation
-- Responsive design
-- API integration
+- API REST Django baseada em classe
+- Autenticação baseada em token
+- Frontend React com uma interface de usuário moderna
+- Validação de formulário
+- Design Responsivo
+- Integração de API
 
 ## Backend Setup
 
-1. Install Python dependencies:
+1. Instalar dependencias do Python:
 ```
 pip install -r requirements.txt
 ```
 
-2. Run migrations:
+2. Execução de Migração:
 ```
 cd backend
 python manage.py migrate
 ```
 
-3. Create a superuser:
+3. riar SuperUsuario:
 ```
 python manage.py createsuperuser
 ```
 
-4. Start the Django server:
+4. Iniciar Servidor Django:
 ```
 python manage.py runserver
 ```
 
-## Frontend Setup
+## Configuração Frontend 
 
-1. Install Node.js dependencies:
+1. Instalar dependencias do Node.js:
 ```
 npm install
 ```
 
-2. Start the development server:
+2. Inicie o servidor de desenvolvimento:
 ```
 npm run dev
 ```
 
 ## API Endpoints
 
-### Authentication
-- `POST /api/auth/register/`: Register a new user
-- `POST /api/auth/login/`: Login and get authentication token
-- `POST /api/auth/logout/`: Logout and invalidate token
+### Autenticação
+- `POST /api/auth/register/`: Registrar Novo Usuario
+- `POST /api/auth/login/`: Faça login e obtenha o token de autenticação
+- `POST /api/auth/logout/`: Sair e invalidar o token
 
 ### User
-- `GET /api/users/me/`: Get current user information
+- `GET /api/users/me/`: Obtenha informações atuais do usuário
 
 ### Items
-- `GET /api/items/`: List all items
-- `POST /api/items/`: Create a new item
-- `GET /api/items/:id/`: Retrieve a specific item
-- `PUT /api/items/:id/`: Update a specific item
-- `DELETE /api/items/:id/`: Delete a specific item
+- `GET /api/items/`: Listar todos os itens
+- `POST /api/items/`: Criar um novo item
+- `GET /api/items/:id/`: Recuperar um item específico
+- `PUT /api/items/:id/`: Atualizar um item específico
+- `DELETE /api/items/:id/`: Delete  um item específico
 
-## Technologies Used
+## Tecnologias Usadas
 
 ### Backend
 - Django
