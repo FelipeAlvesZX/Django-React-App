@@ -70,7 +70,7 @@ const Register = () => {
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div>
               <label htmlFor="username" className="block text-sm font-medium text-secondary-700 mb-1">
-                Nome so usuário
+                Nome do usuário
               </label>
               <input
                 id="username"
