@@ -4,8 +4,8 @@ Um aplicativo full-stack moderno com um backend Django REST API e um frontend Re
 
 ## Estrutura do Projeto
 
-- `backend/`: Django REST API application
-- `src/`: React frontend application
+- `backend/`: Aplicação Django REST API
+- `src/`: APlicação React frontend
 
 ## Caracteristicas
 
