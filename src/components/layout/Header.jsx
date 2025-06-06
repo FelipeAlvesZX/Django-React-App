@@ -18,7 +18,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when route changes
+
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);
