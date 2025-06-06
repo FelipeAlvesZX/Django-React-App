@@ -13,7 +13,7 @@ export default {
           200: '#99c2f7',
           300: '#66a3f3',
           400: '#3385ef',
-          500: '#0071e3', // Apple blue
+          500: '#0071e3', 
           600: '#005ab6',
           700: '#00448a',
           800: '#002d5d',
@@ -25,23 +25,23 @@ export default {
           200: '#cccccc',
           300: '#b3b3b3',
           400: '#999999',
-          500: '#86868b', // Apple gray
+          500: '#86868b', 
           600: '#6b6b6f',
           700: '#505053',
           800: '#363638',
           900: '#1b1b1c',
         },
         accent: {
-          500: '#ff9f0a', // Apple orange
+          500: '#ff9f0a', 
         },
         success: {
-          500: '#28cd41', // Apple green
+          500: '#28cd41',
         },
         warning: {
-          500: '#ffcc00', // Apple yellow
+          500: '#ffcc00', 
         },
         error: {
-          500: '#ff3b30', // Apple red
+          500: '#ff3b30', 
         },
       },
       fontFamily: {
