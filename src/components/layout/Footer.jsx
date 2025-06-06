@@ -61,7 +61,7 @@ const Footer = () => {
         </div>
         
         <div className="mt-8 pt-6 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-secondary-600 text-sm">&copy; {currentYear} UpTechHub. Todos os direitos reservados</p>
+          <p className="text-secondary-600 text-sm">&copy; {currentYear} OrganizaJá. Todos os direitos reservados</p>
           <div className="mt-4 sm:mt-0 flex space-x-4">
             <a href="https://github.com/FelipeAlvesZX" className="text-secondary-500 hover:text-secondary-700">
               <span className="sr-only">GitHub</span>
